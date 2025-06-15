@@ -1,0 +1,38 @@
+{
+  "name": "odin-mini-message-board",
+  "version": "1.0.0",
+  "description": "https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && npx tsc",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "preserve": "npm run build",
+    "serve": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tatadashi/odin-mini-message-board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.1",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Tatadashi/odin-mini-message-board/issues"
+  },
+  "homepage": "https://github.com/Tatadashi/odin-mini-message-board#readme"
+}

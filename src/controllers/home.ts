@@ -1,17 +1,5 @@
 import express from "express";
-
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+import { messages } from "../routes/home.ts";
 
 export const getReq = (req: express.Request, res: express.Response) => {
   res.render('index', { title: 'Mini Messageboard', messages: messages});

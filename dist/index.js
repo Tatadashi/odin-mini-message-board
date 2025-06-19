@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.set('views', path.join(__dirname, '../src/views'));
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: true }));
 app.use("/", homeRoute);
 app.use("/new", newRoute);
 app.listen(port, () => {

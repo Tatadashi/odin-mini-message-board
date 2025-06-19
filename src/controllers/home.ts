@@ -1,5 +1,18 @@
 import express from "express";
 
+const messages = [
+  {
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date(),
+  },
+  {
+    text: "Hello World!",
+    user: "Charles",
+    added: new Date(),
+  },
+];
+
 export const getReq = (req: express.Request, res: express.Response) => {
-  res.send("hello world");
+  res.render('index', { title: 'Mini Messageboard', messages: messages});
 };

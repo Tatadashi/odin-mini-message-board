@@ -19,5 +19,5 @@ app.use("/new", newRoute);
 app.use("/detail", detailRoute);
 
 app.listen(port, () => {
-  console.log(`now listening on http://localhost:${port}`);
+  console.log(`now listening on ${port}`);
 });

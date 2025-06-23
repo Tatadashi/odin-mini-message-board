@@ -6,13 +6,13 @@
     <title><%= title %></title>
   </head>
   <body>
-    <a href="http://localhost:8080/new">Add new message</a>
+    <a href="/new">Add new message</a>
     <ul>
       <% messages.map((message, index) => { %>
       <li>
         <h1><%= message.user %></h1>
         <h3><%= message.text %></h3>
-        <a href="http://localhost:8080/detail/<%= index %>">Open</a>
+        <a href="/detail/<%= index %>">Open</a>
       </li>
       <% }) %>
     </ul>

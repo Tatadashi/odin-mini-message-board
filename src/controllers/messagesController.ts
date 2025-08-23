@@ -22,13 +22,44 @@ export const messagesCreatePost = [
       });
     }
     res.redirect("/");
-    messagesList.push({
+    messagesList.unshift({
       content: req.body.content,
       user: req.body.user,
       added: new Date(),
     });
   },
 ];
+
+export const messagesSearchGet = (req: Request, res: Response) => {
+  let hasUser: boolean = true;
+  let userMessages: { content: string; added: Date }[] = [];
+
+  messagesList.forEach((message) => {
+    if (req.query.user == message.user) {
+      let messageCopy: { content: string; user?: string; added: Date } = {
+        ...message,
+      };
+      delete messageCopy.user;
+      userMessages.push(messageCopy);
+    }
+  });
+
+  if (userMessages.length == 0) {
+    hasUser = false;
+    let fakeYear = new Date(0);
+    fakeYear.setFullYear(0);
+    userMessages.push({
+      content: "This user has no messages",
+      added: fakeYear,
+    });
+  }
+
+  res.render("searchUser", {
+    title: "User Messages",
+    user: req.query.user,
+    messages: userMessages,
+  });
+};
 
 export const messageGet = (req: Request, res: Response) => {
   let messageID: number = Number(req.params.id);

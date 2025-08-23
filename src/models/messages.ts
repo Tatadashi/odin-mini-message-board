@@ -1,7 +1,7 @@
 import { body } from "express-validator";
 import type { ValidationChain } from "express-validator";
 
-export const messagesList = [
+export const messagesList: { content: string; user: string; added: Date }[] = [
   {
     content: "Hi there!",
     user: "Amando",

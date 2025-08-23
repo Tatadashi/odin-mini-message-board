@@ -4,6 +4,7 @@ import {
   messageGet,
   messagesCreateGet,
   messagesCreatePost,
+  messagesSearchGet,
 } from "../controllers/messagesController.ts";
 import type { Request, Response } from "express";
 
@@ -19,6 +20,7 @@ messagesRouter.get("/", messagesListGet);
 messagesRouter.get("/create", messagesCreateGet);
 //have to manually spread for [validation, (req, res)] or it overloads
 messagesRouter.post("/create", ...messagesCreatePost);
+messagesRouter.get("/search", messagesSearchGet);
 messagesRouter.get("/:id", messageGet);
 
 export { messagesRouter };

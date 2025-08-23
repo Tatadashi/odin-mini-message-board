@@ -7,6 +7,14 @@
   </head>
   <body>
     <a href="/create">Add new message</a>
+    <h1>Find Message</h1>
+    <%- include("./partials/errors.ejs") %>
+    <form action="/search" method="get">
+      <label for="user">Find User</label>
+      <input id="user" name="user" type="text" />
+
+      <button type="submit">Submit</button>
+    </form>
     <ul>
       <% messages.map((message, index) => { %>
       <li>
